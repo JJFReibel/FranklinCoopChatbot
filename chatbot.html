@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+  <input id="question" type="text" size="60" placeholder="Ask a question..."><br>
+  <button id="myBtn" onclick="askRobot()">🤖 Ask Robot</button>
+  <p id="answer">Hello</p>
+</div>
+
+<script>
+//Code written by JJ Reibel
+function askRobot() {
+  var query = document.getElementById("question").value.toLowerCase();
+  //creates answer or multi answer
+  var superString = "Sorry, I don't know.";
+  /*checks to queries
+  FOR EACH IF STATEMENT:
+  include answer followed by carriage return and link to page or
+  link to automatically scroll to part of page in question
+  followed by two carriage returns, all as a string APPENDED to superString
+  */
+  
+  //3 Year Olds
+  if(
+  	query.includes("3 year old") ||
+    query.includes("3 years old") ||
+  	query.includes("three") ||
+  	query.includes("3s") ||
+    query.includes("3's")
+  ){
+  
+  }
+  
+  //4 Year Olds
+  if(
+  	query.includes("4 year old") ||
+    query.includes("4 years old") ||
+  	query.includes("four") ||
+  	query.includes("4s") ||
+    query.includes("4's")
+  ){
+  
+  }
+  
+  //Enrollment
+  if(
+  	query.includes("enrollment") ||
+    query.includes("tuition") ||
+  	query.includes("appointment") ||
+  	query.includes("meeting")
+  ){
+  
+  }
+  
+  //Calendar
+  if(
+  	query.includes("calendar") ||
+    query.includes("event") ||
+  	query.includes("events") ||
+  	query.includes("meeting")
+  ){
+  
+  }
+  
+  //Testimonial
+  if(
+  	query.includes("testimonial") ||
+    query.includes("review")
+  ){
+  
+  }
+  
+  //Content
+  if(
+  	query.includes("content")
+  ){
+  
+  }
+  
+  //Directions
+  if(
+  	query.includes("direction") ||
+    query.includes("how to get there") ||
+  	query.includes("how to get to") ||
+  	query.includes("where")
+  ){
+  
+  }
+  
+  //Handbook
+  if(
+  	query.includes("handbook")
+  ){
+  
+  }
+  
+  //Minutes
+  if(
+  	query.includes("minute") ||
+    query.includes("newsletter")
+  ){
+  
+  }
+  
+  //Time
+  if(
+  	query.includes("when does") ||
+    query.includes("what time")
+  ){
+  
+  }
+  
+  //History
+  if(
+  	query.includes("when did") ||
+    query.includes("history") ||
+    query.includes("what year")
+  ){
+  
+  }
+  
+  //Who
+  if(
+  	query.includes("who") ||
+    query.includes("director") ||
+    query.includes("principle") ||
+    query.includes("principal") ||
+    query.includes("head") ||
+    query.includes("staff") ||
+    query.includes("board") ||
+    query.includes("member")
+  ){
+  
+  }
+  
+  document.getElementById("answer").innerText = superString;
+}
+</script>
+</body>
+</html>
