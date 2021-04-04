@@ -5,6 +5,7 @@
   <input id="question" type="text" size="60" placeholder="Ask a question..."><br>
   <button id="myBtn" onclick="askRobot()">🤖 Ask Robot</button>
   <p id="answer">Hello</p>
+  <p id="link"></p>
 </div>
 
 <script>
@@ -13,6 +14,7 @@ function askRobot() {
   var query = document.getElementById("question").value.toLowerCase();
   //creates answer or multi answer
   var superString = "";
+  var linkString = "";
   /*checks to queries
   FOR EACH IF STATEMENT:
   include answer followed by carriage return and link to page or
@@ -61,102 +63,48 @@ function askRobot() {
    }
   }
 
-  //3 Year Olds
+  //Mission/About/Testimonials
   if(
-  	query.includes("three") ||
-  	query.includes("3")
+    query.includes("mission") ||
+    query.includes("about") ||
+    query.includes("testimonial") ||
+    query.includes("review") ||
+    query.includes("when did") ||
+    query.includes("history") ||
+    query.includes("what year")
   ){
-  	superString += "At the top of the page, go to INFO -> 3's Calendar.\n";
-  }
-
-  //4 Year Olds
-  if(
-  	query.includes("four") ||
-  	query.includes("4")
-  ){
-    	superString += "At the top of the page, go to INFO -> 4's Calendar.\n";
+    superString += "At the top of the page, click on OUR MISSION, or click the OUR MISSION link below.\n";
+    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/home/'>OUR MISSION</a>";
   }
 
   //Enrollment
   if(
-  	query.includes("enrollment") ||
+    query.includes("how old") ||
+    query.includes("what age") ||
+    query.includes("enroll") ||
     query.includes("tuition") ||
   	query.includes("appointment") ||
-  	query.includes("meeting")
+  	query.includes("meeting") ||
+  	query.includes("how much") ||
+  	query.includes("cost") ||
+  	query.includes("rate")
   ){
-    	superString += "At the top of the page, go to ABOUT -> Enrollment & Tuition.\n";
+    superString += "Early Learners: $175/month \nPreK: $200/month\n"
+    + "At the top of the page, click on ENROLLMENT & TUITION, or click the ENROLLMENT & TUITION link below.\n";
+    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/enrollment-tuition/'>ENROLLMENT & TUITION</a>";
   }
 
-  //Calendar
+  //Application
   if(
-  	query.includes("calendar") ||
-    query.includes("event") ||
-  	query.includes("events") ||
-  	query.includes("meeting")
+    query.includes("apply") ||
+    query.includes("application") ||
+    query.includes("contact")
   ){
-    	superString += "At the top of the page, go to INFO -> 3's Calendar OR 4's Calendar OR Yearly Calendar.\n";
+        superString += "Please fill out our Application Form and the Director will contact you about enrollment.\n";
+        linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>GO TO APPLICATION</a>";
   }
 
-  //Testimonial
-  if(
-  	query.includes("testimonial") ||
-    query.includes("review")
-  ){
-      	superString += "At the top of the page, go to ABOUT -> Testimonials.\n";
-
-  }
-
-  //Content
-  if(
-  	query.includes("content")
-  ){
-    
-  }
-
-  //Directions
-  if(
-  	query.includes("direction") ||
-    query.includes("how to get there") ||
-  	query.includes("how to get to") ||
-  	query.includes("where")
-  ){
-       superString += "At the top of the page, go to CONTACT, then scroll to bottom.\n";
-
-  }
-
-  //Handbook
-  if(
-  	query.includes("handbook")
-  ){
-    	superString += "At the top of the page, go to INFO -> Parent Handbook.\n";
-  }
-
-  //Minutes
-  if(
-  	query.includes("minute") ||
-    	query.includes("newsletter")
-  ){
-      	superString += "At the top of the page, go to INFO -> Board Meeting Minutes OR Newsletter.\n";
-  }
-
-  //Time
-  if(
-  	query.includes("when does") ||
-    query.includes("what time")
-  ){
-  	superString += "At the top of the page, go to INFO -> 3's Calendar OR 4's Calendar OR Yearly Calendar.\n";
-  }
-
-  //History
-  if(
-  	query.includes("when did") ||
-    query.includes("history") ||
-    query.includes("what year")
-  ){
-  	superString += "At the top of the page, go to HOME.\n";
-  }
-
-  //Who
+  //Who/Educators
   if(
   	query.includes("who") ||
     query.includes("director") ||
@@ -165,10 +113,64 @@ function askRobot() {
     query.includes("head") ||
     query.includes("staff") ||
     query.includes("board") ||
+    query.includes("educator") ||
+    query.includes("teacher") ||
     query.includes("member")
   ){
-        superString += "At the top of the page, go to ABOUT -> Staff & Board Members.\n";
+        superString += "At the top of the page, click on EDUCATORS, or click the EDUCATORS link below.\n";
+        linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/staff-board-members/'>EDUCATORS</a>";
+  }
 
+  //Directions
+  if(
+  	query.includes("direction") ||
+    query.includes("how to get there") ||
+  	query.includes("how to get to") ||
+    query.includes("map") ||
+  	query.includes("where")
+  ){
+    superString += "At the top of the page, click on CONTACT, or click the CONTACT link below.\n";
+    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>EDUCATORS</a>";
+  }
+
+  //Handbook
+  if(
+  	query.includes("handbook")
+  ){
+    	superString += "TO BE ADDED.\n";
+  }
+
+  //Minutes
+  if(
+  	query.includes("minute") ||
+    	query.includes("newsletter")
+  ){
+      	superString += "TO BE ADDED.\n";
+  }
+
+  //Time
+  if(
+    query.includes("when does") ||
+    query.includes("when can") ||
+    query.includes("when may") ||
+    query.includes("what time") ||
+    query.includes("hour") ||
+    query.includes("when are") ||
+    query.includes("when is") ||
+    query.includes("three") ||
+    query.includes("3") ||
+    query.includes("four") ||
+    query.includes("4") ||
+    query.includes("calendar") ||
+    query.includes("event") ||
+  	query.includes("event") ||
+    query.includes("schedule") ||
+  	query.includes("meeting")
+  ){
+  	superString += "At the top of the page, click on SCHEDULE, or click the SCHEDULE link below.\n"
+    + "Early Learners Tuesdays and Thursday \nAM Class 9:00 -11:30\nPM Class 12:00 - 2:30\n\n"
+    + "PreK: Monday, Wednesday, Friday \nAM Class 9:00 -11:30 \nPM Class 12:00 - 2:30\n\n"
+    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/schedule/'>SCHEDULE</a>";
   }
 
   //Color
@@ -178,11 +180,24 @@ function askRobot() {
   	superString += "I like light blue.\n";
   }
 
+  //Coop
+  if(
+    query.includes("coop") ||
+    query.includes("co-op") ||
+    query.includes("co-operative") ||
+    query.includes("cooperative") ||
+    query.includes("preschool")
+  ){
+        superString += "Cooperative preschools offer a place of learning for children and their parents!\n"
+        + "Co-ops have age-based classes that provide children with a quality preschool experience and are run and taught by the teacher and parents."
+  }
+
 if(superString === ""){
   superString = "Sorry, I don't know.";
 }
 
   document.getElementById("answer").innerText = superString;
+  document.getElementById("link").innerHTML = linkString;
 }
 </script>
 </body>
