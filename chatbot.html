@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
-<div>
+<body><div>
   <input id="question" type="text" size="60" placeholder="Ask a question..."><br>
   <button id="myBtn" onclick="askRobot()">🤖 Ask Robot</button>
   <p id="answer">Hello</p>
@@ -86,6 +85,7 @@ function askRobot() {
   	query.includes("appointment") ||
   	query.includes("meeting") ||
   	query.includes("how much") ||
+    query.includes("price") ||
   	query.includes("cost") ||
   	query.includes("rate")
   ){
@@ -129,8 +129,8 @@ function askRobot() {
     query.includes("map") ||
   	query.includes("where")
   ){
-    superString += "At the top of the page, click on CONTACT, or click the CONTACT link below.\n";
-    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>EDUCATORS</a>";
+    superString += "At the top of the page, click on CONTACT US, or click the CONTACT link below.\n";
+    linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>CONTACT US</a>";
   }
 
   //Handbook
@@ -151,6 +151,7 @@ function askRobot() {
   //Time
   if(
     query.includes("when does") ||
+    query.includes("when do") ||
     query.includes("when can") ||
     query.includes("when may") ||
     query.includes("what time") ||
@@ -165,6 +166,10 @@ function askRobot() {
     query.includes("event") ||
   	query.includes("event") ||
     query.includes("schedule") ||
+    query.includes("daily") ||
+    query.includes("monthly") ||
+    query.includes("day") ||
+    query.includes("month") ||
   	query.includes("meeting")
   ){
   	superString += "At the top of the page, click on SCHEDULE, or click the SCHEDULE link below.\n"
@@ -184,8 +189,10 @@ function askRobot() {
   if(
     query.includes("coop") ||
     query.includes("co-op") ||
+    query.includes("co op") ||
     query.includes("co-operative") ||
     query.includes("cooperative") ||
+    query.includes("pre-school") ||
     query.includes("preschool")
   ){
         superString += "Cooperative preschools offer a place of learning for children and their parents!\n"
