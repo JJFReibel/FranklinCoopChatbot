@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<body><div>
+<body onload="hide()">
+<div>
   <input id="question" type="text" size="60" placeholder="Ask a question..."><br>
   <button id="myBtn" onclick="askRobot()">🤖 Ask Robot</button>
   <p id="answer">Hello</p>
@@ -9,7 +10,15 @@
 
 <script>
 //Code written by JJ Reibel
+function hide() {
+  	document.getElementById("answer").style.visibility = "hidden";
+    document.getElementById("link").style.visibility = "hidden";
+    document.getElementById("question").style.visibility = "hidden";
+}
 function askRobot() {
+  document.getElementById("answer").style.visibility = "visible";
+  document.getElementById("link").style.visibility = "visible";
+  document.getElementById("question").style.visibility = "visible";
   var query = document.getElementById("question").value.toLowerCase();
   //creates answer or multi answer
   var superString = "";
@@ -87,10 +96,11 @@ function askRobot() {
   	query.includes("how much") ||
     query.includes("price") ||
   	query.includes("cost") ||
+    query.includes("book") ||
   	query.includes("rate")
   ){
     superString += "Early Learners: $175/month \nPreK: $200/month\n"
-    + "At the top of the page, click on ENROLLMENT & TUITION, or click the ENROLLMENT & TUITION link below.\n";
+        + "At the top of the page, click on ENROLLMENT & TUITION, or click the ENROLLMENT & TUITION link below.\n";
     linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/enrollment-tuition/'>ENROLLMENT & TUITION</a>";
   }
 
@@ -98,10 +108,22 @@ function askRobot() {
   if(
     query.includes("apply") ||
     query.includes("application") ||
+    query.includes("phone") ||
+    query.includes("call") ||
+    query.includes("mail") ||
+    query.includes("news") ||
+    query.includes("letter") ||
+    query.includes("handbook") ||
+    query.includes("info") ||
+    query.includes("minute") ||
     query.includes("contact")
   ){
-        superString += "Please fill out our Application Form and the Director will contact you about enrollment.\n";
-        linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>GO TO APPLICATION</a>";
+        superString += "Please fill out our Application Form and the Director will contact you about enrollment.\n"
+            + "The newsletter can be found below the form on the CONTACT US page.\n"
+            + "Phone: (707) 546-7330\n"
+            + "Email: franklinparkcoop@gmail.com\n"
+            + "Mailing Address: \nFranklin Park\n2095 Franklin Ave.\nSanta Rosa, CA 95404";
+        linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>GO TO APPLICATION (CONTACT US PAGE)</a>";
   }
 
   //Who/Educators
@@ -124,28 +146,17 @@ function askRobot() {
   //Directions
   if(
   	query.includes("direction") ||
-    query.includes("how to get there") ||
-  	query.includes("how to get to") ||
+    query.includes("get there") ||
+  	query.includes("get to") ||
     query.includes("map") ||
+    query.includes("located") ||
+    query.includes("location") ||
+    query.includes("address") ||
   	query.includes("where")
   ){
-    superString += "At the top of the page, click on CONTACT US, or click the CONTACT link below.\n";
+    superString += "At the top of the page, click on CONTACT US, or click the CONTACT link below.\n"
+        + "Mailing Address: \nFranklin Park\n2095 Franklin Ave.\nSanta Rosa, CA 95404";
     linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/contact/'>CONTACT US</a>";
-  }
-
-  //Handbook
-  if(
-  	query.includes("handbook")
-  ){
-    	superString += "TO BE ADDED.\n";
-  }
-
-  //Minutes
-  if(
-  	query.includes("minute") ||
-    	query.includes("newsletter")
-  ){
-      	superString += "TO BE ADDED.\n";
   }
 
   //Time
@@ -170,11 +181,12 @@ function askRobot() {
     query.includes("monthly") ||
     query.includes("day") ||
     query.includes("month") ||
+    query.includes("open") ||
   	query.includes("meeting")
   ){
   	superString += "At the top of the page, click on SCHEDULE, or click the SCHEDULE link below.\n"
-    + "Early Learners Tuesdays and Thursday \nAM Class 9:00 -11:30\nPM Class 12:00 - 2:30\n\n"
-    + "PreK: Monday, Wednesday, Friday \nAM Class 9:00 -11:30 \nPM Class 12:00 - 2:30\n\n"
+        + "Early Learners Tuesdays and Thursday \nAM Class 9:00 -11:30\nPM Class 12:00 - 2:30\n\n"
+        + "PreK: Monday, Wednesday, Friday \nAM Class 9:00 -11:30 \nPM Class 12:00 - 2:30\n\n"
     linkString += "<a href='https://dev-franklinparkcoop.pantheonsite.io/schedule/'>SCHEDULE</a>";
   }
 
@@ -183,6 +195,27 @@ function askRobot() {
     query.includes("color")
   ){
   	superString += "I like light blue.\n";
+  }
+
+  //Name
+  if(
+    query.includes("what is your name")
+  ){
+    superString += "I am Franklin.\n";
+  }
+
+  //Age
+  if(
+    query.includes("how old are you")
+  ){
+    superString += "I was born in 2021.\n";
+  }
+
+  //Created
+  if(
+    query.includes("who created you")
+  ){
+    superString += "JJ created me.\n";
   }
 
   //Coop
