@@ -233,6 +233,37 @@ function askRobot() {
         + "Co-ops have age-based classes that provide children with a quality preschool experience and are run and taught by the teacher and parents."
   }
 
+  //Web app
+  if(
+    query.includes("who created this site") ||
+    query.includes("who created this website") ||
+    query.includes("who created this app") ||
+    query.includes("who created this web app") ||
+    query.includes("who created the site") ||
+    query.includes("who created the website") ||
+    query.includes("who created the app") ||
+    query.includes("who created the web app") ||
+    query.includes("who created this web site") ||
+    query.includes("who created the web site")
+  ){
+    superString = "Scrum Master & Chatbot Engineer: JJ Reibel\n"
+        + "Technical Skills Used: Artificial Intelligence, JavaScript, HTML, CSS, WordPress\n"
+        + "Non-Technical Skills Used: Scrum, Assigning Tasks, UI, Documents\n"
+        + "GitHub: https://github.com/JJFReibel\n"
+        + "LinkedIn: https://www.linkedin.com/in/jj-reibel\n\n"
+        + "Web Designer & Content Creator: Jennifer Jennings\n"
+        + "Technical Skills Used: WordPress, Digital Photography, PhotoShop\n"
+        + "Non-Technical Skills Used: Scrum, UI, Documents\n\n"
+        + "Programmer: Alexander Smith\n"
+        + "Technical Skills Used: JavaScript, HTML, CSS, WordPress\n"
+        + "Non-Technical Skills Used: Scrum, UI, Documents\n"
+        + "LinkedIn: https://www.linkedin.com/in/jennifermariejennings\n\n"
+        + "Created February 2021 - May 2021\n"
+        + "Updated thereafter by Franklin Park Co-op Preschool Volunteers+";
+    linkString = "";
+  }
+
+//Unknown
 if(superString === ""){
   superString = "Sorry, I don't know.";
 }
